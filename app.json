@@ -1,0 +1,49 @@
+{
+  "name": "Minecraft",
+  "description": "A Minecraft Paper Server on Heroku!",
+  "keywords": [
+    "games",
+    "minecraft"
+  ],
+  "logo": "https://github.com/SirDankenstien/PaperMC-on-Heroku/raw/master/logo.jpg",
+  "repository": "https://github.com/SirDankenstien/PaperMC-on-Heroku",
+  "env": {
+    "MINECRAFT_EULA": {
+      "description": "Do you accept the Minecraft EULA?",
+      "value": "true",
+      "required": true
+    },
+    "MINECRAFT_VERSION": {
+      "description": "Minecraft Paperclip Version",
+      "value": "1.16.4",
+      "required": true
+    },
+    "DROPBOX_API_TOKEN": {
+      "description": "Your personal dropbox API token ( Go to https://www.dropbox.com/developers/apps , Click on create app, Select Dropbox API, Select App folder, Name the app & create it, Click on the app, Go to Generated access token, Click on Generate and Copy the key ) ",
+      "required": false
+    },
+    "DNSEXIT_DNS": {
+      "description": "Your personal DnsExit DNS hostname (Not required)",
+      "required": false
+    },
+    "DNSEXIT_USER": {
+      "description": "Your DnsExit Username (Not required)",
+      "required": false
+    },
+    "DNSEXIT_PASS": {
+      "description": "Your DnsExit User password (Not required)",
+      "required": false
+    }
+  },
+  "buildpacks": [
+    {
+      "url": "heroku/jvm"
+    },
+    {
+      "url": "https://github.com/SirDankenstien/PaperMC-on-Heroku"
+    },
+    {
+      "url": "https://github.com/heroku/heroku-buildpack-php"
+    }
+  ]
+}
